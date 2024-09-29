@@ -53,7 +53,15 @@ $login = function () {
                 <span class="ms-2 text-sm text-gray-600 dark:text-gray-400">{{ __('Remember me') }}</span>
             </label>
         </div>
-
+        <div class="block mt-4">
+            <a href="{{ route('github.login') }}" class="btn btn-dark w-full">
+                <i class="fab fa-github"></i> Login with GitHub
+            </a>
+            
+            <a href="{{ route('google.login') }}" class="btn btn-danger w-full">
+                <i class="fab fa-google"></i> Login with Google
+            </a>
+        </div>
         <div class="flex items-center justify-end mt-4">
             @if (Route::has('password.request'))
                 <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}" wire:navigate>
@@ -64,6 +72,8 @@ $login = function () {
             <x-primary-button class="ms-3">
                 {{ __('Log in') }}
             </x-primary-button>
+           
+            
         </div>
     </form>
 </div>
